@@ -4,10 +4,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="NLv-dM-DvQ">
             <objects>
                 <navigationController id="QIM-Fh-Fx5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="7od-9m-guM"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3db-vv-XDh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -20,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-303" y="-105"/>
         </scene>
-        <!--View Controller-->
+        <!--La météo-->
         <scene sceneID="6ea-TY-QDp">
             <objects>
                 <viewController id="JhM-yQ-INd" sceneMemberID="viewController">
@@ -31,8 +33,70 @@
                     <view key="view" contentMode="scaleToFill" id="O6M-En-3JR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Température" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq7-9O-jAF">
+                                <rect key="frame" x="136" y="193" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pression" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08P-cO-wfP">
+                                <rect key="frame" x="138" y="229" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmp-ur-VIJ"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="La Ville" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmd-rE-6av">
+                                <rect key="frame" x="189" y="86" width="228" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-Ic-KtK">
+                                <attributedString key="userComments">
+                                    <fragment content="Image weatrher">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="smallSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Humidité" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxT-kk-FHC">
+                                <rect key="frame" x="136" y="268" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DATE ICI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-O2-AF0">
+                                <rect key="frame" x="266" y="124" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLP-XW-Hm0">
+                                <rect key="frame" x="18" y="383" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conditions météorologique" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CA-sv-JzG">
+                                <rect key="frame" x="34" y="354" width="208" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10V-nH-hFw">
+                                <rect key="frame" x="266" y="144" width="286" height="192"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Ajouter" id="P2g-K9-Q90"/>
+                    <toolbarItems>
+                        <barButtonItem title="Changer de ville" width="209" id="60e-UH-WjT"/>
+                        <barButtonItem title="Ajouter une ville" width="152" id="eAQ-4i-x3m"/>
+                        <barButtonItem title="Plus d'informations" width="172" id="FG7-ou-fQy"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="La météo" id="Jxt-hv-K56"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="jKI-iS-Nfl" kind="showDetail" id="d8h-l6-8wc"/>
                         <segue destination="XTI-jV-4py" kind="presentation" id="vug-1E-ayU"/>
@@ -59,7 +123,10 @@
                                         <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sp7-nS-VSX">
                                             <rect key="frame" x="0.0" y="-1" width="600" height="44"/>
                                             <items>
-                                                <navigationItem title="Détails des données météo" id="XGT-cM-vfD"/>
+                                                <navigationItem title="Détails des données météo" id="XGT-cM-vfD">
+                                                    <barButtonItem key="leftBarButtonItem" title="Retour" id="xOc-f1-Hez"/>
+                                                    <barButtonItem key="rightBarButtonItem" title="Données affichées" id="kLd-rM-R0W"/>
+                                                </navigationItem>
                                             </items>
                                         </navigationBar>
                                     </subviews>
@@ -94,7 +161,10 @@
                                         <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieC-NO-O2x">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <items>
-                                                <navigationItem title="Liste des villes" id="HHO-QP-wuD"/>
+                                                <navigationItem title="Liste des villes" id="HHO-QP-wuD">
+                                                    <barButtonItem key="leftBarButtonItem" title="Annuler" id="FXl-cP-L2z"/>
+                                                    <barButtonItem key="rightBarButtonItem" title="Ajouter" id="pxB-XF-6In"/>
+                                                </navigationItem>
                                             </items>
                                         </navigationBar>
                                     </subviews>
@@ -153,7 +223,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNd-rH-BHP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Ajouter une ville" id="vqj-WA-faS"/>
+                                    <navigationItem title="Ajouter une ville" id="tbs-9d-kCo"/>
                                 </items>
                             </navigationBar>
                         </subviews>
