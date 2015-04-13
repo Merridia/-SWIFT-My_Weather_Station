@@ -3,7 +3,7 @@
 //  [JD]My_Weather_StationTests
 //
 //  Created by Developer on 29/03/2015.
-//  Copyright (c) 2015 Jennifer D'ROZA. All rights reserved.
+//  Copyright (c) 2015 Jennifer D'ROZA & Loïc MUSSARD. All rights reserved.
 //
 
 import UIKit

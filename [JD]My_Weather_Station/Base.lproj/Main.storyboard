@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QIM-Fh-Fx5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -7,15 +7,18 @@
         <!--Item-->
         <scene sceneID="NLv-dM-DvQ">
             <objects>
-                <navigationController id="QIM-Fh-Fx5" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="QIM-Fh-Fx5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="7od-9m-guM"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3db-vv-XDh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="mmP-S5-d8C">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="JhM-yQ-INd" kind="show" id="jjD-1u-on3"/>
+                        <segue destination="JhM-yQ-INd" kind="show" id="ZAt-zy-Xi6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06q-ho-NjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,9 +77,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLP-XW-Hm0">
-                                <rect key="frame" x="18" y="383" width="240" height="128"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conditions météorologique" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CA-sv-JzG">
                                 <rect key="frame" x="34" y="354" width="208" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -86,27 +86,38 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10V-nH-hFw">
                                 <rect key="frame" x="266" y="144" width="286" height="192"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLP-XW-Hm0">
+                                <rect key="frame" x="16" y="383" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajouter" id="P2g-K9-Q90"/>
                     <toolbarItems>
-                        <barButtonItem title="Changer de ville" width="209" id="60e-UH-WjT"/>
-                        <barButtonItem title="Ajouter une ville" width="152" id="eAQ-4i-x3m"/>
-                        <barButtonItem title="Plus d'informations" width="172" id="FG7-ou-fQy"/>
+                        <barButtonItem title="Changer de ville" width="209" id="60e-UH-WjT">
+                            <connections>
+                                <segue destination="XTI-jV-4py" kind="show" id="nGo-Em-MOU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Ajouter une ville" width="152" id="eAQ-4i-x3m">
+                            <connections>
+                                <segue destination="uF4-Mk-IkD" kind="presentation" id="Y4k-bB-Crk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Plus d'informations" width="172" id="FG7-ou-fQy">
+                            <connections>
+                                <segue destination="jKI-iS-Nfl" kind="show" id="1sC-ZU-bdN"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="La météo" id="Jxt-hv-K56"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="jKI-iS-Nfl" kind="showDetail" id="d8h-l6-8wc"/>
-                        <segue destination="XTI-jV-4py" kind="presentation" id="vug-1E-ayU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dtk-pt-AyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="517" y="-105"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Détails Données Météo-->
         <scene sceneID="XMM-gu-o16">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="jKI-iS-Nfl" sceneMemberID="viewController">
@@ -138,7 +149,7 @@
                             <outlet property="delegate" destination="jKI-iS-Nfl" id="aJ7-eh-zJb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Nkl-g3-gKP"/>
+                    <navigationItem key="navigationItem" title="Détails Données Météo" id="Nkl-g3-gKP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-pe-CaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,35 +174,15 @@
                                             <items>
                                                 <navigationItem title="Liste des villes" id="HHO-QP-wuD">
                                                     <barButtonItem key="leftBarButtonItem" title="Annuler" id="FXl-cP-L2z"/>
-                                                    <barButtonItem key="rightBarButtonItem" title="Ajouter" id="pxB-XF-6In"/>
+                                                    <barButtonItem key="rightBarButtonItem" title="Ajouter" id="pxB-XF-6In">
+                                                        <connections>
+                                                            <segue destination="uF4-Mk-IkD" kind="presentation" id="cpc-iZ-y0O"/>
+                                                        </connections>
+                                                    </barButtonItem>
                                                 </navigationItem>
                                             </items>
                                         </navigationBar>
                                     </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0Hb-EO-PW9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Hb-EO-PW9" id="Fi0-P4-hR6">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="jKI-iS-Nfl" kind="showDetail" id="F4G-Ca-ywd"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6ue-KN-hbI">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6ue-KN-hbI" id="fo2-BN-uhh">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hD4-S6-8JE">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hD4-S6-8JE" id="Tt7-MO-QHa">
-                                    <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -236,6 +227,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d8h-l6-8wc"/>
+        <segue reference="Y4k-bB-Crk"/>
     </inferredMetricsTieBreakers>
 </document>
