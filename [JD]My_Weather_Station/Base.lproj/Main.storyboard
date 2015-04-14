@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="JhM-yQ-INd" kind="show" id="ZAt-zy-Xi6"/>
+                        <segue destination="JhM-yQ-INd" kind="relationship" relationship="rootViewController" id="m4R-W7-I10"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06q-ho-NjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,7 +28,7 @@
         <!--La météo-->
         <scene sceneID="6ea-TY-QDp">
             <objects>
-                <viewController id="JhM-yQ-INd" sceneMemberID="viewController">
+                <viewController id="JhM-yQ-INd" customClass="MainPageViewController" customModule="_JD_My_Weather_Station" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="62G-jc-Wbw"/>
                         <viewControllerLayoutGuide type="bottom" id="8ZA-50-nSl"/>
@@ -112,15 +112,18 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="La météo" id="Jxt-hv-K56"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ItemBarreClick" destination="60e-UH-WjT" id="stj-lq-pXC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dtk-pt-AyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="-105"/>
+            <point key="canvasLocation" x="457" y="-105"/>
         </scene>
         <!--Détails Données Météo-->
         <scene sceneID="XMM-gu-o16">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="jKI-iS-Nfl" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="jKI-iS-Nfl" customClass="WeatherDataTableViewController" customModule="_JD_My_Weather_Station" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9bW-ia-d97">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +138,11 @@
                                             <rect key="frame" x="0.0" y="-1" width="600" height="44"/>
                                             <items>
                                                 <navigationItem title="Détails des données météo" id="XGT-cM-vfD">
-                                                    <barButtonItem key="leftBarButtonItem" title="Retour" id="xOc-f1-Hez"/>
+                                                    <barButtonItem key="leftBarButtonItem" title="Retour" id="xOc-f1-Hez">
+                                                        <connections>
+                                                            <segue destination="JhM-yQ-INd" kind="show" id="4h6-Gd-kgl"/>
+                                                        </connections>
+                                                    </barButtonItem>
                                                     <barButtonItem key="rightBarButtonItem" title="Données affichées" id="kLd-rM-R0W"/>
                                                 </navigationItem>
                                             </items>
@@ -153,12 +160,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-pe-CaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1233" y="-105"/>
+            <point key="canvasLocation" x="1175" y="-865"/>
         </scene>
-        <!--Table View Controller-->
+        <!--List Town Table View Controller-->
         <scene sceneID="S6N-6m-xwb">
             <objects>
-                <tableViewController id="XTI-jV-4py" sceneMemberID="viewController">
+                <tableViewController id="XTI-jV-4py" customClass="ListTownTableViewController" customModule="_JD_My_Weather_Station" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LXl-bk-3wh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,7 +180,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <items>
                                                 <navigationItem title="Liste des villes" id="HHO-QP-wuD">
-                                                    <barButtonItem key="leftBarButtonItem" title="Annuler" id="FXl-cP-L2z"/>
+                                                    <barButtonItem key="leftBarButtonItem" title="Annuler" id="FXl-cP-L2z">
+                                                        <connections>
+                                                            <segue destination="JhM-yQ-INd" kind="show" id="O86-Ca-kaJ"/>
+                                                        </connections>
+                                                    </barButtonItem>
                                                     <barButtonItem key="rightBarButtonItem" title="Ajouter" id="pxB-XF-6In">
                                                         <connections>
                                                             <segue destination="uF4-Mk-IkD" kind="presentation" id="cpc-iZ-y0O"/>
@@ -191,18 +202,15 @@
                             <outlet property="delegate" destination="XTI-jV-4py" id="qM7-JX-v5q"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="uF4-Mk-IkD" kind="presentation" id="fvC-ij-t0j"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yng-cp-Yfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="641"/>
+            <point key="canvasLocation" x="-263" y="645"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Towns View Controller-->
         <scene sceneID="jyc-1z-664">
             <objects>
-                <viewController id="uF4-Mk-IkD" sceneMemberID="viewController">
+                <viewController id="uF4-Mk-IkD" customClass="AddTownsViewController" customModule="_JD_My_Weather_Station" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I7Z-uQ-uOu"/>
                         <viewControllerLayoutGuide type="bottom" id="fbp-ZJ-Cjk"/>
@@ -214,7 +222,13 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNd-rH-BHP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Ajouter une ville" id="tbs-9d-kCo"/>
+                                    <navigationItem title="Ajouter une ville" id="tbs-9d-kCo">
+                                        <barButtonItem key="leftBarButtonItem" title="Annuler" id="F9y-Ed-W6L">
+                                            <connections>
+                                                <segue destination="JhM-yQ-INd" kind="presentation" id="qcE-v9-sgF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -223,10 +237,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FP3-T6-6SS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="1325"/>
+            <point key="canvasLocation" x="-263" y="1617"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="m4R-W7-I10"/>
         <segue reference="Y4k-bB-Crk"/>
     </inferredMetricsTieBreakers>
 </document>
