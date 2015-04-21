@@ -7,9 +7,30 @@
 //
 
 import UIKit
+import MapKit
+
 
 class AddTownsViewController: UIViewController {
-
+    
+    @IBOutlet weak var MVMapViewAddTown: MKMapView!
+    
+    @IBOutlet weak var SeachTown: UISearchBar!
+    
+    @IBOutlet weak var ButtonTownSave: UIButton!
+    
+    @IBAction func SaveTown(sender: AnyObject) {
+        
+        var ajoutVille : VillesAjoutees
+        ajoutVille = VillesAjoutees()
+        
+        //var city = Ville(Nom: SeachTown.text , Longitude: TFTownLong.text , Latitude: TFTownLat.text )
+        
+        
+        //ajoutVille.add(city)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +41,8 @@ class AddTownsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*

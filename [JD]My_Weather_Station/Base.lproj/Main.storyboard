@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QIM-Fh-Fx5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QIM-Fh-Fx5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="JhM-yQ-INd" kind="relationship" relationship="rootViewController" id="m4R-W7-I10"/>
+                        <segue destination="JhM-yQ-INd" kind="relationship" relationship="rootViewController" id="86j-4c-hyt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06q-ho-NjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-303" y="-105"/>
+            <point key="canvasLocation" x="-331" y="-105"/>
         </scene>
         <!--La météo-->
         <scene sceneID="6ea-TY-QDp">
@@ -34,7 +34,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8ZA-50-nSl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O6M-En-3JR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Température" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq7-9O-jAF">
@@ -51,7 +51,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmp-ur-VIJ"/>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="La Ville" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmd-rE-6av">
-                                <rect key="frame" x="189" y="86" width="228" height="30"/>
+                                <rect key="frame" x="186" y="86" width="228" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -78,17 +78,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conditions météorologique" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CA-sv-JzG">
-                                <rect key="frame" x="34" y="354" width="208" height="21"/>
+                                <rect key="frame" x="32" y="354" width="208" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10V-nH-hFw">
-                                <rect key="frame" x="266" y="144" width="286" height="192"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLP-XW-Hm0">
-                                <rect key="frame" x="16" y="383" width="240" height="128"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10V-nH-hFw"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLP-XW-Hm0"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -113,99 +109,167 @@
                     <navigationItem key="navigationItem" title="La météo" id="Jxt-hv-K56"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="ItemBarreClick" destination="60e-UH-WjT" id="stj-lq-pXC"/>
+                        <outlet property="Itembarclick" destination="60e-UH-WjT" id="gjq-Uw-ioP"/>
+                        <outlet property="buttonAddTown" destination="eAQ-4i-x3m" id="cqc-1r-5t9"/>
+                        <outlet property="buttonChangeTown" destination="60e-UH-WjT" id="PpR-ti-i8c"/>
+                        <outlet property="buttonMoreInformations" destination="FG7-ou-fQy" id="rPa-sE-laQ"/>
+                        <outlet property="conditionImageView" destination="eLP-XW-Hm0" id="rYW-lg-ZXe"/>
+                        <outlet property="labelTodayDate" destination="Dfm-O2-AF0" id="0yS-Gc-HXy"/>
+                        <outlet property="labelTodayHum" destination="AxT-kk-FHC" id="5Nu-5X-GjR"/>
+                        <outlet property="labelTodayPress" destination="08P-cO-wfP" id="zd4-0k-vE1"/>
+                        <outlet property="labelTodayTemp" destination="Cq7-9O-jAF" id="ZN2-5g-Gi1"/>
+                        <outlet property="labelWeatherCondition" destination="5CA-sv-JzG" id="dwq-Fm-ME9"/>
+                        <outlet property="townNameShow" destination="cmd-rE-6av" id="Cyt-8m-Kj6"/>
+                        <outlet property="weatherImageView" destination="10V-nH-hFw" id="sMl-ie-VRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dtk-pt-AyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457" y="-105"/>
+            <point key="canvasLocation" x="359" y="-105"/>
         </scene>
         <!--Détails Données Météo-->
         <scene sceneID="XMM-gu-o16">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="jKI-iS-Nfl" customClass="WeatherDataTableViewController" customModule="_JD_My_Weather_Station" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9bW-ia-d97">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9bW-ia-d97">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xhx-ON-7Qx">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xhx-ON-7Qx" id="bn5-k7-1Cn">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sp7-nS-VSX">
-                                            <rect key="frame" x="0.0" y="-1" width="600" height="44"/>
-                                            <items>
-                                                <navigationItem title="Détails des données météo" id="XGT-cM-vfD">
-                                                    <barButtonItem key="leftBarButtonItem" title="Retour" id="xOc-f1-Hez">
-                                                        <connections>
-                                                            <segue destination="JhM-yQ-INd" kind="show" id="4h6-Gd-kgl"/>
-                                                        </connections>
-                                                    </barButtonItem>
-                                                    <barButtonItem key="rightBarButtonItem" title="Données affichées" id="kLd-rM-R0W"/>
-                                                </navigationItem>
-                                            </items>
-                                        </navigationBar>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="EP9-lD-Jq9">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" textLabel="knb-XY-gRS" style="IBUITableViewCellStyleDefault" id="xhx-ON-7Qx">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="xhx-ON-7Qx" id="bn5-k7-1Cn">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="knb-XY-gRS">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" textLabel="mlO-8n-jen" style="IBUITableViewCellStyleDefault" id="qTa-IJ-wty">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="qTa-IJ-wty" id="F9O-ZJ-9oy">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mlO-8n-jen">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" textLabel="bkp-xZ-cbP" style="IBUITableViewCellStyleDefault" id="TtF-aw-PyP">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="TtF-aw-PyP" id="fDD-5p-DrN">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bkp-xZ-cbP">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="jKI-iS-Nfl" id="dg3-oW-pZN"/>
                             <outlet property="delegate" destination="jKI-iS-Nfl" id="aJ7-eh-zJb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Détails Données Météo" id="Nkl-g3-gKP"/>
+                    <navigationItem key="navigationItem" title="Détails Données Météo" id="Nkl-g3-gKP">
+                        <barButtonItem key="leftBarButtonItem" title="Retour" id="xOc-f1-Hez">
+                            <connections>
+                                <segue destination="JhM-yQ-INd" kind="show" id="4h6-Gd-kgl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Données affichées" id="kLd-rM-R0W"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="DataDetailsCell" destination="qTa-IJ-wty" id="b1V-Hc-6gH"/>
+                        <outlet property="buttonReturn" destination="xOc-f1-Hez" id="X8y-OT-tIx"/>
+                        <outlet property="buttonShowMoreData" destination="kLd-rM-R0W" id="jrT-Q5-EcV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-pe-CaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="-865"/>
+            <point key="canvasLocation" x="1167" y="-853"/>
         </scene>
-        <!--List Town Table View Controller-->
+        <!--Liste des villes-->
         <scene sceneID="S6N-6m-xwb">
             <objects>
                 <tableViewController id="XTI-jV-4py" customClass="ListTownTableViewController" customModule="_JD_My_Weather_Station" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LXl-bk-3wh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="LXl-bk-3wh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NVe-Bc-NLi">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NVe-Bc-NLi" id="ufU-eK-FWo">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieC-NO-O2x">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                            <items>
-                                                <navigationItem title="Liste des villes" id="HHO-QP-wuD">
-                                                    <barButtonItem key="leftBarButtonItem" title="Annuler" id="FXl-cP-L2z">
-                                                        <connections>
-                                                            <segue destination="JhM-yQ-INd" kind="show" id="O86-Ca-kaJ"/>
-                                                        </connections>
-                                                    </barButtonItem>
-                                                    <barButtonItem key="rightBarButtonItem" title="Ajouter" id="pxB-XF-6In">
-                                                        <connections>
-                                                            <segue destination="uF4-Mk-IkD" kind="presentation" id="cpc-iZ-y0O"/>
-                                                        </connections>
-                                                    </barButtonItem>
-                                                </navigationItem>
-                                            </items>
-                                        </navigationBar>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <sections>
+                            <tableViewSection id="2li-gb-fNS">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="43" id="91e-jE-IEg">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="91e-jE-IEg" id="ON8-S5-faL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="43" id="ooo-OZ-A3l">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ooo-OZ-A3l" id="SaD-1F-wvQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" rowHeight="43" id="NVe-Bc-NLi">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NVe-Bc-NLi" id="ufU-eK-FWo">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="XTI-jV-4py" id="8eJ-3j-UgG"/>
                             <outlet property="delegate" destination="XTI-jV-4py" id="qM7-JX-v5q"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Liste des villes" id="lJx-Uk-fLy">
+                        <barButtonItem key="leftBarButtonItem" title="Annuler" id="FXl-cP-L2z">
+                            <connections>
+                                <segue destination="JhM-yQ-INd" kind="show" id="O86-Ca-kaJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Ajouter" id="pxB-XF-6In">
+                            <connections>
+                                <segue destination="uF4-Mk-IkD" kind="presentation" id="cpc-iZ-y0O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="ListTown" destination="NVe-Bc-NLi" id="9Mq-yv-ZnY"/>
+                        <outlet property="buttonAddTown" destination="pxB-XF-6In" id="4l0-rO-GgH"/>
+                        <outlet property="buttonReturn" destination="FXl-cP-L2z" id="uxx-eZ-UUU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yng-cp-Yfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-263" y="645"/>
+            <point key="canvasLocation" x="-331" y="643"/>
         </scene>
         <!--Add Towns View Controller-->
         <scene sceneID="jyc-1z-664">
@@ -219,8 +283,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhp-kf-z0a">
+                                <rect key="frame" x="257" y="555" width="87" height="30"/>
+                                <state key="normal" title="Sauvegarder">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SaveTown:" destination="uF4-Mk-IkD" eventType="touchUpInside" id="oYG-mL-Kth"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EBS-TY-NIc"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ville recherchée" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95D-p8-tuW">
+                                <rect key="frame" x="16" y="58" width="121" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7kg-eZ-918"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuF-En-Ehn">
+                                <rect key="frame" x="5" y="209" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7Y-0C-dRR">
+                                <rect key="frame" x="460" y="209" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HCh-YW-TPT"/>
+                            <searchBar contentMode="scaleToFill" fixedFrame="YES" searchBarStyle="prominent" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cii-MH-OXE">
+                                <rect key="frame" x="0.0" y="88" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardAppearance="light" returnKeyType="route"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="rXM-nE-4VB" id="848-kb-Z3n"/>
+                                </connections>
+                            </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axF-xs-aKe">
+                                <rect key="frame" x="0.0" y="252" width="600" height="295"/>
+                            </mapView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNd-rH-BHP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <rect key="frame" x="-5" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Ajouter une ville" id="tbs-9d-kCo">
                                         <barButtonItem key="leftBarButtonItem" title="Annuler" id="F9y-Ed-W6L">
@@ -234,14 +342,35 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="MVMapViewAddTown" destination="axF-xs-aKe" id="aUl-74-6o6"/>
+                        <outlet property="searchDisplayController" destination="zB4-Hl-9qv" id="v0G-Fh-d1o"/>
+                        <outlet property="view" destination="cii-MH-OXE" id="6ap-1u-PLO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FP3-T6-6SS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="YJq-Kv-OQx">
+                    <connections>
+                        <outlet property="delegate" destination="uF4-Mk-IkD" id="qtY-P2-5bU"/>
+                        <outlet property="searchContentsController" destination="uF4-Mk-IkD" id="7qF-CU-ime"/>
+                        <outlet property="searchResultsDataSource" destination="uF4-Mk-IkD" id="rwU-hM-ukM"/>
+                        <outlet property="searchResultsDelegate" destination="uF4-Mk-IkD" id="4iV-Rg-E5H"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="zB4-Hl-9qv">
+                    <connections>
+                        <outlet property="delegate" destination="uF4-Mk-IkD" id="LkZ-EE-cQd"/>
+                        <outlet property="searchContentsController" destination="uF4-Mk-IkD" id="chy-7o-dsn"/>
+                        <outlet property="searchResultsDataSource" destination="uF4-Mk-IkD" id="bA8-pS-D3q"/>
+                        <outlet property="searchResultsDelegate" destination="uF4-Mk-IkD" id="Xhu-Ru-6VX"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-263" y="1617"/>
+            <point key="canvasLocation" x="-31" y="1393"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m4R-W7-I10"/>
-        <segue reference="Y4k-bB-Crk"/>
+        <segue reference="O86-Ca-kaJ"/>
+        <segue reference="cpc-iZ-y0O"/>
     </inferredMetricsTieBreakers>
 </document>

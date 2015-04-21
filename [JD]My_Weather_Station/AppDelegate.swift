@@ -7,18 +7,45 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var coreLocationController:CoreLocationController?
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.coreLocationController     = CoreLocationController()
         return true
     }
-
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        println("didChangeAuthorizationStatus")
+        
+        switch status {
+        case .NotDetermined:
+            println(".NotDetermined")
+            break
+            
+        case .Authorized:
+            println(".Authorized")
+            //requestAlwaysAuthorization
+            //self.locationManager.startUpdating()
+            break
+            
+        case .Denied:
+            println(".Denied")
+            break
+            
+        default:
+            println("Unhandled authorization status")
+            break
+        }
+    
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

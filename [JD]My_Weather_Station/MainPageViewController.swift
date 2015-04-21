@@ -10,6 +10,30 @@ import UIKit
 
 class MainPageViewController: UIViewController {
 
+    @IBOutlet weak var townNameShow: UITextField!
+    
+    @IBOutlet weak var labelTodayDate: UILabel!
+    
+    @IBOutlet weak var weatherImageView: UIImageView!
+    
+    @IBOutlet weak var labelTodayTemp: UILabel!
+    
+    @IBOutlet weak var labelTodayPress: UILabel!
+    
+    @IBOutlet weak var labelTodayHum: UILabel!
+    
+    @IBOutlet weak var labelWeatherCondition: UILabel!
+    
+    @IBOutlet weak var conditionImageView: UIImageView!
+    
+    @IBOutlet weak var buttonMoreInformations: UIBarButtonItem!
+    
+    @IBOutlet weak var buttonAddTown: UIBarButtonItem!
+    
+    @IBOutlet weak var buttonChangeTown: UIBarButtonItem!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +56,6 @@ class MainPageViewController: UIViewController {
     }
     */
     
-    
-    //@IBOutlet weak var ItemBarreClick: UIBarButtonItem!{}
+   @IBOutlet weak var Itembarclick: UIBarButtonItem!
 
 }
