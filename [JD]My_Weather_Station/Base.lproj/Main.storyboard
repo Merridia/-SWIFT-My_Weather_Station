@@ -66,12 +66,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DATE ICI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-O2-AF0">
-                                <rect key="frame" x="266" y="124" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conditions météorologique" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CA-sv-JzG">
                                 <rect key="frame" x="16" y="179" width="208" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -92,20 +86,39 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DV_pas_de_donnee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="J5b-2u-Z78">
                                 <rect key="frame" x="81" y="324" width="48" height="45"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="J_ensoleillé.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uCX-dI-DhE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="J_ensoleillé.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uCX-dI-DhE">
                                 <rect key="frame" x="341" y="179" width="64" height="52"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="J_forte_pluie.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gN3-Yb-sBr">
                                 <rect key="frame" x="75" y="377" width="52" height="59"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LA VILLE ICI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wT-ov-Dug">
-                                <rect key="frame" x="252" y="81" width="96" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LA VILLE ICI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wT-ov-Dug">
+                                <rect key="frame" x="121" y="81" width="309" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="309" id="ufO-Rg-Xiv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE ICI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-O2-AF0">
+                                <rect key="frame" x="167" y="118" width="216" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="DIR-wI-pgd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2wT-ov-Dug" firstAttribute="top" secondItem="62G-jc-Wbw" secondAttribute="bottom" constant="17" id="BBh-bk-gfL"/>
+                            <constraint firstItem="uCX-dI-DhE" firstAttribute="top" secondItem="Dfm-O2-AF0" secondAttribute="bottom" constant="40" id="PFZ-8Z-EX4"/>
+                            <constraint firstItem="Dfm-O2-AF0" firstAttribute="top" secondItem="2wT-ov-Dug" secondAttribute="bottom" constant="16" id="abZ-83-s2y"/>
+                            <constraint firstItem="2wT-ov-Dug" firstAttribute="leading" secondItem="O6M-En-3JR" secondAttribute="leading" constant="121" id="at1-6q-aE1"/>
+                            <constraint firstItem="Dfm-O2-AF0" firstAttribute="centerX" secondItem="2wT-ov-Dug" secondAttribute="centerX" id="laV-nR-g7r"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajouter" id="P2g-K9-Q90"/>
                     <toolbarItems>
@@ -403,6 +416,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O86-Ca-kaJ"/>
-        <segue reference="cpc-iZ-y0O"/>
+        <segue reference="Y4k-bB-Crk"/>
     </inferredMetricsTieBreakers>
 </document>

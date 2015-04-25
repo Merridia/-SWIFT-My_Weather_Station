@@ -3,8 +3,7 @@
 //  [JD]My_Weather_Station
 //
 //  Created by Developer on 29/03/2015.
-//  Copyright (c) 2015 Jennifer D'ROZA. All rights reserved.
-//
+//  Copyright (c) 2015 Jennifer D'ROZA And ArchLoy. All rights reserved.//
 
 import UIKit
 import CoreLocation
