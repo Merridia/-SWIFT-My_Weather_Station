@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B22AEE31AEBCE2400813B2D /* datum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B22AEE21AEBCE2400813B2D /* datum.swift */; };
+		8B22AEE51AEBCE5D00813B2D /* getDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B22AEE41AEBCE5D00813B2D /* getDatas.swift */; };
 		8B300B9A1ADC02B200612BFB /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B300B991ADC02B200612BFB /* MainPageViewController.swift */; };
 		8B300B9C1ADC02D600612BFB /* AddTownsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B300B9B1ADC02D600612BFB /* AddTownsViewController.swift */; };
 		8B300B9E1ADC032500612BFB /* WeatherDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B300B9D1ADC032500612BFB /* WeatherDataTableViewController.swift */; };
@@ -91,6 +93,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B22AEE21AEBCE2400813B2D /* datum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = datum.swift; sourceTree = "<group>"; };
+		8B22AEE41AEBCE5D00813B2D /* getDatas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getDatas.swift; sourceTree = "<group>"; };
 		8B300B991ADC02B200612BFB /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		8B300B9B1ADC02D600612BFB /* AddTownsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTownsViewController.swift; sourceTree = "<group>"; };
 		8B300B9D1ADC032500612BFB /* WeatherDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataTableViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +385,8 @@
 				8BBE83DF1AE3D85300A8F8F2 /* ville.swift */,
 				8BF5B30F1AE52F40000EA1B8 /* villesAjoutees.swift */,
 				8BB66EDC1AE5446A00F3391F /* Geolocations.swift */,
+				8B22AEE21AEBCE2400813B2D /* datum.swift */,
+				8B22AEE41AEBCE5D00813B2D /* getDatas.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -570,6 +576,8 @@
 				8BF5B3101AE52F40000EA1B8 /* villesAjoutees.swift in Sources */,
 				8BB66EDD1AE5446A00F3391F /* Geolocations.swift in Sources */,
 				8BBE83E01AE3D85300A8F8F2 /* ville.swift in Sources */,
+				8B22AEE51AEBCE5D00813B2D /* getDatas.swift in Sources */,
+				8B22AEE31AEBCE2400813B2D /* datum.swift in Sources */,
 				8BD22F9C1AC86ED0000EA2C7 /* ModelController.swift in Sources */,
 				8B300B9A1ADC02B200612BFB /* MainPageViewController.swift in Sources */,
 				8B300BA01ADC035700612BFB /* ListTownTableViewController.swift in Sources */,
