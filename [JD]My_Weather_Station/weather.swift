@@ -23,9 +23,15 @@ class GetDatas
     class func parseJSON(urlToRequest: String) -> NSDictionary
     {
         var data : NSData;
-        data = NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
+        var ur = NSURL(string: "http://"+urlToRequest)
+        
+
         var error: NSError?
-        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
+        //data = NSData(contentsOfURL: ur!)!
+        
+        data = NSData(contentsOfURL: ur!, options: nil, error: &error)!
+        
+        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
     
         return boardsDictionary
     }
@@ -58,6 +64,7 @@ public class Weather
         self.init();
         
         url += "lat="+m_lat+"&lon="+m_lon+"&APPID="+APPID;
+        update()
     }
     
     //! Initialize with a city name and country
@@ -69,6 +76,7 @@ public class Weather
     {
         self.init();
         url += "q="+city+","+ctry
+        update()
     }
     
     //! Update the datas by requesting the url
@@ -86,7 +94,7 @@ public class Weather
             }
         }
         date = NSDate();
-        GetDatas.parseJSON(url);
+        data = GetDatas.parseJSON(url);
     }
     
     //! Set the position of user
@@ -156,6 +164,10 @@ public class Weather
         return ((data["weather"] as NSArray)[0] as NSDictionary)["description"] as String
     }
     
+    func getCity() -> String
+    {
+        return data["name"] as String 
+    }
 }
 
 

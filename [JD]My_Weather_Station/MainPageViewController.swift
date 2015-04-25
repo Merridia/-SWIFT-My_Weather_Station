@@ -32,10 +32,33 @@ class MainPageViewController: UIViewController {
     
     @IBOutlet weak var buttonChangeTown: UIBarButtonItem!
     
+    var weather : Weather!
+    var loc : Locate!
+    var timer : NSTimer!
     
+    
+    func update()
+    {
+        if(loc.getLon() != "")
+        {
+            if(weather == nil)
+            {
+                weather = Weather(m_lon: loc.getLon(), m_lat: loc.getLat())
+            }
+            townNameShow.text = weather.getCity()
+        }
+        else
+        {
+            townNameShow.text = "Please wait for location detect"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        
+        loc = Locate()
 
         // Do any additional setup after loading the view.
     }

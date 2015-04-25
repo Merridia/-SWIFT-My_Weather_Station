@@ -10,7 +10,56 @@ import Foundation
 import CoreLocation
 import MapKit
 
-var locationManager:CLLocationManager = CLLocationManager()
+
+let locManager = CLLocationManager()
+
+class Locate
+{
+    init()
+    {
+        if(CLLocationManager.locationServicesEnabled())
+        {
+            locManager.requestAlwaysAuthorization()
+        }
+        locManager.startUpdatingLocation()
+    }
+    
+    func getLoc() -> CLLocation!
+    {
+        
+        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Authorized)
+        {
+                
+            return locManager.location
+                
+        }
+        
+        return nil
+    }
+    
+    func getLat() -> String
+    {
+        var ll = getLoc()
+        if(ll != nil)
+        {
+            return ll.coordinate.latitude.description
+        }
+        
+        return ""
+    }
+    func getLon() -> String
+    {
+        var ll = getLoc()
+        if(ll != nil)
+        {
+            return ll.coordinate.longitude.description
+        }
+        
+        return ""
+    }
+    
+    
+}
 
 func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
     
@@ -24,7 +73,8 @@ class CoreLocationController : NSObject, CLLocationManagerDelegate {
     
     var locationManager:CLLocationManager = CLLocationManager()
     
-    override init() {
+    override init()
+    {
         super.init()
         self.locationManager.delegate = self
         self.locationManager.requestAlwaysAuthorization()
