@@ -17,6 +17,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 \[JD\]My_Weather_Station.xcodeproj/project.xcworkspace/xcuserdata/developer.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcbkptlist
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
