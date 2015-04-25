@@ -21,7 +21,7 @@ public class GetDatas
     */
     func parseJSON(urlToRequest: String) -> NSDictionary
     {
-        var data : NSData;
+        var data : NSData?;
         var ur = NSURL(string: "http://"+urlToRequest)
         
         
@@ -29,7 +29,7 @@ public class GetDatas
         
         data = NSData(contentsOfURL: ur!, options: nil, error: &error)!
         
-        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         
         return boardsDictionary
     }
