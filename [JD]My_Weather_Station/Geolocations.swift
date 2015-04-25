@@ -29,6 +29,7 @@ class Locate
         
         if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse || CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Authorized)
         {
+            locManager.startUpdatingLocation()
                 
             return locManager.location
                 

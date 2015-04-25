@@ -28,7 +28,7 @@ class GetDatas
         
         var error: NSError?
         
-        data = NSData(contentsOfURL: ur!, options: nil, error: &error)!
+        data = NSData(contentsOfURL: ur!, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error)!
         
         var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         

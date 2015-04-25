@@ -50,14 +50,13 @@ class MainPageViewController: UIViewController {
     {
         if(loc.getLon() != "")
         {
-            timer = NSTimer.scheduledTimerWithTimeInterval(600, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+            timer.invalidate()
+            timer = NSTimer.scheduledTimerWithTimeInterval(300, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
             
             weather = Weather(m_lon: loc.getLon(), m_lat: loc.getLat())
             
             labelTodayDate.text = Datum.getDay()
             update();
-            
-            
         }
         else
         {
