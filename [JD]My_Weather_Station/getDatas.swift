@@ -27,7 +27,6 @@ class GetDatas
         
         
         var error: NSError?
-        //data = NSData(contentsOfURL: ur!)!
         
         data = NSData(contentsOfURL: ur!, options: nil, error: &error)!
         

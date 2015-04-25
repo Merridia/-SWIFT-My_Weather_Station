@@ -54,6 +54,7 @@ class MainPageViewController: UIViewController {
             
             weather = Weather(m_lon: loc.getLon(), m_lat: loc.getLat())
             
+            labelTodayDate.text = Datum.getDay()
             update();
             
             
@@ -69,6 +70,9 @@ class MainPageViewController: UIViewController {
         weather.update();
         
         labelCurrentTown.text = weather.getCity()
+        labelTodayTemp.text = weather.getTemp().description
+        labelTodayPress.text = weather.getPres().description
+        labelTodayHum.text = weather.getHum().description
         
     }
     
