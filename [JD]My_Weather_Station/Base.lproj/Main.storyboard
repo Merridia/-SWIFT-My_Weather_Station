@@ -38,23 +38,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Température" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq7-9O-jAF">
-                                <rect key="frame" x="136" y="193" width="96" height="21"/>
+                                <rect key="frame" x="130" y="268" width="96" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pression" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08P-cO-wfP">
-                                <rect key="frame" x="138" y="229" width="67" height="21"/>
+                                <rect key="frame" x="130" y="336" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmp-ur-VIJ"/>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="La Ville" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmd-rE-6av">
-                                <rect key="frame" x="186" y="86" width="228" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-Ic-KtK">
                                 <attributedString key="userComments">
                                     <fragment content="Image weatrher">
@@ -66,7 +61,7 @@
                                 </attributedString>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Humidité" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxT-kk-FHC">
-                                <rect key="frame" x="136" y="268" width="69" height="21"/>
+                                <rect key="frame" x="130" y="409" width="69" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,13 +73,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conditions météorologique" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CA-sv-JzG">
-                                <rect key="frame" x="32" y="354" width="208" height="21"/>
+                                <rect key="frame" x="16" y="179" width="208" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10V-nH-hFw"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLP-XW-Hm0"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="degres_celcus.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="thV-kN-Vby">
+                                <rect key="frame" x="234" y="252" width="38" height="37"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CrH-hA-SuC"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLG-WB-olq"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjx-iF-aWF"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="T_pas_de_donnee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="giO-MO-4O3">
+                                <rect key="frame" x="81" y="258" width="46" height="42"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DV_pas_de_donnee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="J5b-2u-Z78">
+                                <rect key="frame" x="81" y="324" width="48" height="45"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="J_ensoleillé.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uCX-dI-DhE">
+                                <rect key="frame" x="341" y="179" width="64" height="52"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="J_forte_pluie.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gN3-Yb-sBr">
+                                <rect key="frame" x="75" y="377" width="52" height="59"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LA VILLE ICI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wT-ov-Dug">
+                                <rect key="frame" x="252" y="81" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -114,12 +133,17 @@
                         <outlet property="buttonChangeTown" destination="60e-UH-WjT" id="PpR-ti-i8c"/>
                         <outlet property="buttonMoreInformations" destination="FG7-ou-fQy" id="rPa-sE-laQ"/>
                         <outlet property="conditionImageView" destination="eLP-XW-Hm0" id="rYW-lg-ZXe"/>
+                        <outlet property="imageCelsus" destination="thV-kN-Vby" id="fp5-Ha-gA7"/>
+                        <outlet property="imageHumidityLevel" destination="gN3-Yb-sBr" id="A9U-DH-uRg"/>
+                        <outlet property="imagePressure" destination="J5b-2u-Z78" id="IH9-F1-NWi"/>
+                        <outlet property="imageTemp" destination="giO-MO-4O3" id="aoe-7o-ifM"/>
+                        <outlet property="imageWeatherCondition" destination="uCX-dI-DhE" id="AcQ-5D-rKn"/>
+                        <outlet property="labelCurrentTown" destination="2wT-ov-Dug" id="6He-kb-qVr"/>
                         <outlet property="labelTodayDate" destination="Dfm-O2-AF0" id="0yS-Gc-HXy"/>
                         <outlet property="labelTodayHum" destination="AxT-kk-FHC" id="5Nu-5X-GjR"/>
                         <outlet property="labelTodayPress" destination="08P-cO-wfP" id="zd4-0k-vE1"/>
                         <outlet property="labelTodayTemp" destination="Cq7-9O-jAF" id="ZN2-5g-Gi1"/>
                         <outlet property="labelWeatherCondition" destination="5CA-sv-JzG" id="dwq-Fm-ME9"/>
-                        <outlet property="townNameShow" destination="cmd-rE-6av" id="Cyt-8m-Kj6"/>
                         <outlet property="weatherImageView" destination="10V-nH-hFw" id="sMl-ie-VRm"/>
                     </connections>
                 </viewController>
@@ -369,8 +393,15 @@
             <point key="canvasLocation" x="-31" y="1393"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DV_pas_de_donnee.jpg" width="53" height="50"/>
+        <image name="J_ensoleillé.jpg" width="53" height="50"/>
+        <image name="J_forte_pluie.jpg" width="53" height="50"/>
+        <image name="T_pas_de_donnee.jpg" width="53" height="50"/>
+        <image name="degres_celcus.jpg" width="53" height="50"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O86-Ca-kaJ"/>
         <segue reference="Y4k-bB-Crk"/>
+        <segue reference="O86-Ca-kaJ"/>
     </inferredMetricsTieBreakers>
 </document>

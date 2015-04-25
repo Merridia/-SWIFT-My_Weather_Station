@@ -9,8 +9,8 @@
 import UIKit
 
 class MainPageViewController: UIViewController {
-
-    @IBOutlet weak var townNameShow: UITextField!
+    
+    @IBOutlet weak var labelCurrentTown: UILabel!
     
     @IBOutlet weak var labelTodayDate: UILabel!
     
@@ -35,7 +35,16 @@ class MainPageViewController: UIViewController {
     var weather : Weather!
     var loc : Locate!
     var timer : NSTimer!
+
+    @IBOutlet weak var imageTemp: UIImageView!
     
+    @IBOutlet weak var imageCelsus: UIImageView!
+    
+    @IBOutlet weak var imagePressure: UIImageView!
+    
+    @IBOutlet weak var imageWeatherCondition: UIImageView!
+    
+    @IBOutlet weak var imageHumidityLevel: UIImageView!
     
     func update()
     {
