@@ -46,26 +46,36 @@ class MainPageViewController: UIViewController {
     
     @IBOutlet weak var imageHumidityLevel: UIImageView!
     
-    func update()
+    func firstUpdate()
     {
         if(loc.getLon() != "")
         {
-            if(weather == nil)
-            {
-                weather = Weather(m_lon: loc.getLon(), m_lat: loc.getLat())
-            }
-            townNameShow.text = weather.getCity()
+            timer = NSTimer.scheduledTimerWithTimeInterval(600, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+            
+            weather = Weather(m_lon: loc.getLon(), m_lat: loc.getLat())
+            
+            update();
+            
+            
         }
         else
         {
-            townNameShow.text = "Please wait for location detect"
+            labelCurrentTown.text = "Please wait for location detect"
         }
+    }
+    
+    func update()
+    {
+        weather.update();
+        
+        labelCurrentTown.text = weather.getCity()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("firstUpdate"), userInfo: nil, repeats: true)
         
         loc = Locate()
 
