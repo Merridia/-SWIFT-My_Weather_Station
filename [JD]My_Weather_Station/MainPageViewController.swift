@@ -31,7 +31,6 @@ class MainPageViewController: UIViewController {
     
     @IBOutlet weak var buttonChangeTown: UIBarButtonItem!
     
-    var weather : Weather!
     var loc : Locate!
     var timer : NSTimer!
 
@@ -76,10 +75,11 @@ class MainPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("firstUpdate"), userInfo: nil, repeats: true)
         
         loc = Locate()
+        update()
 
         // Do any additional setup after loading the view.
     }

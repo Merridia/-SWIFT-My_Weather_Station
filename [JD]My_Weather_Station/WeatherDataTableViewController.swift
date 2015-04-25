@@ -15,9 +15,12 @@ class WeatherDataTableViewController: UITableViewController {
     
     @IBOutlet weak var buttonReturn: UIBarButtonItem!
     
+    @IBOutlet var tabview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tabview.registerClass(UITableViewCell.self, forHeaderFooterViewReuseIdentifier: "reuseid")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

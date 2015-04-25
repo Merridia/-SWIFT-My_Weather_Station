@@ -8,7 +8,31 @@
 
 import Foundation
 
+var weather : Weather = Weather(m_lon: "131.8999999", m_lat: "43.133333")
 
+public class getCity
+{
+    class func getResults(ctyName : String) -> [Ville]
+    {
+        let req = GetDatas()
+        let dat = req.parseJSON("api.openweathermap.org/data/2.5/find?q="+ctyName+"&type=accurate&mode=json&APPID=e0674ffbcf91cb5380d78b6bc6d4362e")
+        
+        var ret : [Ville]
+        ret = [Ville]()
+        
+        var cnt = dat["count"] as Int
+        
+        for(var i=0; i<cnt; i++)
+        {
+            
+            var vl = Ville(m_nom: (dat["list"] as NSArray)[0]["name"] as String, m_longitude: (((dat["list"] as NSArray)[0]["coord"] as NSDictionary)["lon"] as Float).description, m_latitude: (((dat["list"] as NSArray)[0]["coord"] as NSDictionary)["lat"] as Float).description)
+            vl.setCntry((((dat["list"] as NSArray)[0] as NSDictionary)["sys"] as NSDictionary)["country"] as String)
+            
+            ret.append(vl)
+        }
+        return ret
+    }
+}
 
 //!  Will get weather informations
 public class Weather
@@ -49,7 +73,7 @@ public class Weather
     convenience init(city: String, ctry: String)
     {
         self.init();
-        url += "q="+city+","+ctry
+        url += "q="+city+","+ctry+"&APPID="+APPID;
         update()
     }
     

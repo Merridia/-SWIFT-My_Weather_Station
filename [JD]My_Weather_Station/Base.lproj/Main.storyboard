@@ -34,7 +34,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8ZA-50-nSl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O6M-En-3JR">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Température" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq7-9O-jAF">
@@ -92,7 +92,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="J_forte_pluie.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gN3-Yb-sBr">
                                 <rect key="frame" x="75" y="377" width="52" height="59"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LA VILLE ICI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wT-ov-Dug">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LA VILLE ICI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wT-ov-Dug">
                                 <rect key="frame" x="121" y="81" width="309" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="309" id="ufO-Rg-Xiv"/>
@@ -101,7 +101,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE ICI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-O2-AF0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DATE ICI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-O2-AF0">
                                 <rect key="frame" x="167" y="118" width="216" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="216" id="DIR-wI-pgd"/>
@@ -241,6 +241,7 @@
                         <outlet property="DataDetailsCell" destination="qTa-IJ-wty" id="b1V-Hc-6gH"/>
                         <outlet property="buttonReturn" destination="xOc-f1-Hez" id="X8y-OT-tIx"/>
                         <outlet property="buttonShowMoreData" destination="kLd-rM-R0W" id="jrT-Q5-EcV"/>
+                        <outlet property="tabview" destination="9bW-ia-d97" id="Hbv-G2-e8y"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-pe-CaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -416,7 +417,7 @@
         <image name="degres_celcus.jpg" width="53" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O86-Ca-kaJ"/>
+        <segue reference="4h6-Gd-kgl"/>
         <segue reference="Y4k-bB-Crk"/>
     </inferredMetricsTieBreakers>
 </document>
