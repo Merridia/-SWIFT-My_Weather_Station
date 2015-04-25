@@ -145,14 +145,6 @@ public class Weather
         return data["name"] as String 
     }
     
-    //! Get the day of watched weather.
-    /*!
-    \return dd-mm-yyyy
-    */
-    func getCity() -> String
-    {
-        return data["name"] as String
-    }
 }
 
 
