@@ -11,13 +11,20 @@ import MapKit
 
 class AddTownsViewController: UIViewController {
     
-    @IBOutlet weak var MVMapViewAddTown: MKMapView!
+    @IBOutlet weak var labelSearchTown: UILabel!
     
-    @IBOutlet weak var SeachTown: UISearchBar!
+    @IBOutlet weak var TF_SearchTown: UITextField!
     
-    @IBOutlet weak var ButtonTownSave: UIButton!
+    @IBOutlet weak var Button_Searh: UIButton!
     
-    @IBAction func SaveTown(sender: AnyObject) {
+    @IBOutlet weak var labelSearchResults: UILabel!
+    
+    @IBOutlet weak var List_ListeTownFound: UIPickerView!
+    
+    @IBOutlet weak var button_SaveThisTown: UIButton!
+    
+    
+    @IBAction func button_SaveThisTown(sender: AnyObject) {
         
         var ajoutVille : VillesAjoutees
         ajoutVille = VillesAjoutees()
@@ -29,6 +36,14 @@ class AddTownsViewController: UIViewController {
         
     }
     
+    //Recherche la ville dans l'api openweather
+    @IBAction func actionSearch(sender: AnyObject) {
+        
+        //TF_SearchTown.text
+        
+        //s'il trouve plusieur ville, il rempli la liste suivante:
+        //List_ListeTownFound
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
