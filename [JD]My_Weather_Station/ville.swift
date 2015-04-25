@@ -15,10 +15,10 @@ class Ville {
     var latitude: String
     
     //constructeur
-    init (Nom: String , Longitude:String , Latitude : String){
-        self.nom = Nom
-        self.longitude = Longitude
-        self.latitude = Latitude
+    init (m_nom: String , m_longitude:String , m_latitude : String){
+        self.nom = m_nom
+        self.longitude = m_longitude
+        self.latitude = m_latitude
         
         println("\(self.nom) is being created")
     }

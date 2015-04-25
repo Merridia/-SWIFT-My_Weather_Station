@@ -16,6 +16,21 @@ class ListTownTableViewController: UITableViewController {
     
     @IBOutlet weak var buttonReturn: UIBarButtonItem!
     
+    var villeParis:Ville = Ville(m_nom: "Paris", m_longitude:"2.3488000", m_latitude:"48.8534100")
+    var villeLondre:Ville = Ville(m_nom:"Londre", m_longitude:"-0.1257400",m_latitude:"51.5085300")
+    
+    
+    var listeVille:VillesAjoutees = VillesAjoutees()
+    
+    @IBAction func AddTown(sender: AnyObject) {
+        
+    }
+    
+    func ShowTown (){
+        
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,9 +62,12 @@ class ListTownTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
+        
+        listeVille.add(villeParis)
+        listeVille.add(villeLondre)
         // Configure the cell...
-        cell.textLabel.text = "Swift"
+        cell.textLabel.text = villeParis.nom
+        //cell.detailTextLabel.text = "Latitude : " + villeParis.latitude + ", Longitude : " + villeParis.longitude
         
         return cell
     }
