@@ -170,7 +170,19 @@ public class Weather
     {
         return data["name"] as String 
     }
-    
+    func getAll() -> [String:String]
+    {
+        var ret = [String:String]()
+        
+        ret["Temperature"]=getTemp().description + " °C"
+        ret["ForceVent"]=getWind().description + " Km/h"
+        ret["Humidity"]=getHum().description + " %"
+        ret["Pression"]=getPres().description + " hPa"
+        ret["Description"]=getDesc() + "."
+        
+        
+        return ret;
+    }
 }
 
 
