@@ -9,24 +9,52 @@ import UIKit
 import MapKit
 
 
-class AddTownsViewController: UIViewController {
+class AddTownsViewController: UIViewController, UIPickerViewDelegate {
     
-    @IBOutlet weak var MVMapViewAddTown: MKMapView!
+    @IBOutlet weak var labelSearchTown: UILabel!
     
-    @IBOutlet weak var SeachTown: UISearchBar!
+    @IBOutlet weak var TF_SearchTown: UITextField!
     
-    @IBOutlet weak var ButtonTownSave: UIButton!
+    @IBOutlet weak var Button_Searh: UIButton!
     
-    @IBAction func SaveTown(sender: AnyObject) {
+    @IBOutlet weak var labelSearchResults: UILabel!
+    
+    @IBOutlet weak var List_ListeTownFound: UIPickerView!
+    
+    @IBOutlet weak var button_SaveThisTown: UIButton!
+    
+    
+    @IBAction func button_SaveThisTown(sender: AnyObject) {
         
         var ajoutVille : VillesAjoutees
         ajoutVille = VillesAjoutees()
+    }
+        //https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html        
+        var villes: [String] = ["Paris","Bordeaux"]
+        var city = Ville(m_nom: "Paris", m_longitude:"2.3488000", m_latitude:"48.8534100")
+        var v = "Marseille"
+    //https://www.youtube.com/watch?v=MdXmIViD17U
+        func numberOfComponentsInPickerView(pikerView: UIPickerView!) -> Int{
+            return 1
+        }
         
-        //var city = Ville(Nom: SeachTown.text , Longitude: TFTownLong.text , Latitude: TFTownLat.text )
+        func numberOfRowsInComponent(_component: Int) -> Int{
+            villes.append(v)
+            return villes.count
+        }
         
+        func pickerView(_pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
+            return villes[row]
+        }
+    
+    
+    //Recherche la ville dans l'api openweather
+    @IBAction func actionSearch(sender: AnyObject) {
         
-        //ajoutVille.add(city)
+        //TF_SearchTown.text
         
+        //s'il trouve plusieur ville, il rempli la liste suivante:
+        //List_ListeTownFound
     }
     
     
