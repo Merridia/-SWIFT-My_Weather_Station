@@ -7,11 +7,11 @@
 
 import Foundation
 
-//!  A internal class.
+//!  Http requester class.
 /*!
 This one will not used in core application but just for getting JSON objects from URL.
 */
-class GetDatas
+public class GetDatas
 {
     
     //! Get JSON object from url.
@@ -19,7 +19,7 @@ class GetDatas
     \param urlToRequest url requested by user.
     \return NSDictionary that contain JSON
     */
-    class func parseJSON(urlToRequest: String) -> NSDictionary
+    func parseJSON(urlToRequest: String) -> NSDictionary
     {
         var data : NSData;
         var ur = NSURL(string: "http://"+urlToRequest)

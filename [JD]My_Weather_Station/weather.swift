@@ -18,12 +18,14 @@ public class Weather
     private var url = "api.openweathermap.org/data/2.5/weather?" /*!< url to openweathermap public api, used to access datas. */
     private var APPID : String /*!< private APPID used to get datas from api. Cannot be modify for this version */
     private var date : NSDate? /*!< Date of last data check. Will initialized when first update is being performed */
+    private var recever : GetDatas /*!< Used for http requests */
     
     //! initializer. Will set base APPID and data
     init()
     {
         data = NSDictionary();
         APPID = "e0674ffbcf91cb5380d78b6bc6d4362e"
+        recever = GetDatas();
     }
 
     //! Initialize with lattitude and longitude informations
@@ -66,7 +68,7 @@ public class Weather
             }
         }
         date = NSDate();
-        data = GetDatas.parseJSON(url);
+        data = recever.parseJSON(url);
     }
     
     //! Set the position of user
