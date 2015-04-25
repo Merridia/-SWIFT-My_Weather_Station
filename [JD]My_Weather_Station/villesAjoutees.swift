@@ -18,11 +18,16 @@ class VillesAjoutees {
         listeVilles.append(V);
     }
     
-    func count (V:Ville) -> Int {
+    func count () -> Int {
         return listeVilles.count;
     }
     
     func removeAt(i:Int){
         listeVilles.removeAtIndex(i)
+    }
+    
+    func getAt(at : Int) -> Ville
+    {
+        return listeVilles[at]
     }
 }

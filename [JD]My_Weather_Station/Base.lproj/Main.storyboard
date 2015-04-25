@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QIM-Fh-Fx5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QIM-Fh-Fx5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -245,13 +245,13 @@
                         <sections>
                             <tableViewSection id="2li-gb-fNS">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="43" id="91e-jE-IEg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseId1" rowHeight="43" id="91e-jE-IEg">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="91e-jE-IEg" id="ON8-S5-faL">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="43" id="ooo-OZ-A3l">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="43" id="ooo-OZ-A3l">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ooo-OZ-A3l" id="SaD-1F-wvQ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -290,6 +290,7 @@
                         <outlet property="ListTown" destination="NVe-Bc-NLi" id="9Mq-yv-ZnY"/>
                         <outlet property="buttonAddTown" destination="pxB-XF-6In" id="4l0-rO-GgH"/>
                         <outlet property="buttonReturn" destination="FXl-cP-L2z" id="uxx-eZ-UUU"/>
+                        <outlet property="m_tableview" destination="LXl-bk-3wh" id="sYo-68-0IP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yng-cp-Yfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
