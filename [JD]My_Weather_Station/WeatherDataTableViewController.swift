@@ -22,7 +22,7 @@ class WeatherDataTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tabview.registerClass(UITableViewCell.self, forHeaderFooterViewReuseIdentifier: "reuseid")
+        tabview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell3")
         items=weather.getAll()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,21 +37,22 @@ class WeatherDataTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return items.count
-    }
+        return 0
+    }*/
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        
         return items.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseId", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell3", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
         

@@ -24,18 +24,21 @@ class AddTownsViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var button_SaveThisTown: UIButton!
     
     
+    //https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html
+    var villes: [String] = ["Paris","Bordeaux"]
+    var city = Ville(m_nom: "Paris", m_longitude:"2.3488000", m_latitude:"48.8534100")
+    var v = "Marseille"
+    //https://www.youtube.com/watch?v=MdXmIViD17U
+    
+    
     @IBAction func button_SaveThisTown(sender: AnyObject) {
         
         var ajoutVille : VillesAjoutees
         ajoutVille = VillesAjoutees()
     }
-        //https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html        
-        var villes: [String] = ["Paris","Bordeaux"]
-        var city = Ville(m_nom: "Paris", m_longitude:"2.3488000", m_latitude:"48.8534100")
-        var v = "Marseille"
-    //https://www.youtube.com/watch?v=MdXmIViD17U
+    
         func numberOfComponentsInPickerView(pikerView: UIPickerView!) -> Int{
-            return 1
+            return villes.count
         }
         
         func numberOfRowsInComponent(_component: Int) -> Int{
