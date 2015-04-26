@@ -19,7 +19,7 @@ public class GetDatas
     \param urlToRequest url requested by user.
     \return NSDictionary that contain JSON
     */
-    func parseJSON(urlToRequest: String) -> NSDictionary
+    func parseJSON(urlToRequest: String) -> NSDictionary?
     {
         var data : NSData?;
         var ur = NSURL(string: "http://"+urlToRequest)
@@ -27,11 +27,17 @@ public class GetDatas
         
         var error: NSError?
         
-        data = NSData(contentsOfURL: ur!, options: nil, error: &error)!
+        data = NSURLConnection.sendSynchronousRequest(NSURLRequest(URL: ur!), returningResponse: nil, error: &error)!
+            //NSData(contentsOfURL: ur!, options: nil, error: &error)!
         
-        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+        var boardsDictionary: NSDictionary
+        if( error != nil)
+        {
+            boardsDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         
-        return boardsDictionary
+            return boardsDictionary
+        }
+        return nil
     }
     
 }

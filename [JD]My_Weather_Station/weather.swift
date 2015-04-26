@@ -15,21 +15,28 @@ public class getCity
     class func getResults(ctyName : String) -> [Ville]
     {
         let req = GetDatas()
-        let dat = req.parseJSON("api.openweathermap.org/data/2.5/find?q="+ctyName+"&type=accurate&mode=json&APPID=e0674ffbcf91cb5380d78b6bc6d4362e")
+        var dat : NSDictionary?
+        dat=req.parseJSON("api.openweathermap.org/data/2.5/find?q="+ctyName+"&type=accurate&mode=json&APPID=e0674ffbcf91cb5380d78b6bc6d4362e")
         
         var ret : [Ville]
         ret = [Ville]()
         
-        var cnt = dat["count"] as Int
-        
-        for(var i=0; i<cnt; i++)
+        if(dat == nil)
         {
+            var cnt = dat!["count"] as Int
+        
+            for(var i=0; i<cnt; i++)
+            {
             
-            var vl = Ville(m_nom: (dat["list"] as NSArray)[0]["name"] as String, m_longitude: (((dat["list"] as NSArray)[0]["coord"] as NSDictionary)["lon"] as Float).description, m_latitude: (((dat["list"] as NSArray)[0]["coord"] as NSDictionary)["lat"] as Float).description)
-            vl.setCntry((((dat["list"] as NSArray)[0] as NSDictionary)["sys"] as NSDictionary)["country"] as String)
+                var vl = Ville(m_nom: (dat!["list"] as NSArray)[0]["name"] as String, m_longitude: (((dat!["list"] as NSArray)[0]["coord"] as NSDictionary)["lon"] as Float).description, m_latitude: (((dat!["list"] as NSArray)[0]["coord"] as NSDictionary)["lat"] as Float).description)
+                vl.setCntry((((dat!["list"] as NSArray)[0] as NSDictionary)["sys"] as NSDictionary)["country"] as String)
             
-            ret.append(vl)
+                ret.append(vl)
+            }
+            return ret
         }
+        ret.append(Ville(m_nom: "Vladivostok", m_longitude: "131.89999", m_latitude: "43.13333"))
+        ret[0].setCntry("RU")
         return ret
     }
 }
@@ -38,7 +45,7 @@ public class getCity
 public class Weather
 {
 
-    private var data : NSDictionary;/*!< Will contain last json object from openweathermap server */
+    private var data : NSDictionary?;/*!< Will contain last json object from openweathermap server */
     private var url = "api.openweathermap.org/data/2.5/weather?" /*!< url to openweathermap public api, used to access datas. */
     private var APPID : String /*!< private APPID used to get datas from api. Cannot be modify for this version */
     private var date : NSDate? /*!< Date of last data check. Will initialized when first update is being performed */
@@ -47,7 +54,6 @@ public class Weather
     //! initializer. Will set base APPID and data
     init()
     {
-        data = NSDictionary();
         APPID = "e0674ffbcf91cb5380d78b6bc6d4362e"
         recever = GetDatas();
     }
@@ -123,7 +129,11 @@ public class Weather
     */
     func getTemp() -> Int
     {
-        return Int((((data["main"] as NSDictionary)["temp"] as Float) - 273.15)+0.5)
+        if(data != nil)
+        {
+            return Int((((data!["main"] as NSDictionary)["temp"] as Float) - 273.15)+0.5)
+        }
+        return 0
     }
     
     //! Get the current pressure.
@@ -132,7 +142,11 @@ public class Weather
     */
     func getPres() -> Int
     {
-        return (data["main"] as NSDictionary)["pressure"] as Int
+        if(data != nil)
+        {
+            return (data!["main"] as NSDictionary)["pressure"] as Int
+        }
+        return 0
     }
     
     //! Get the current humidity.
@@ -141,7 +155,11 @@ public class Weather
     */
     func getHum() -> Int
     {
-        return (data["main"] as NSDictionary)["humidity"] as Int
+        if(data != nil)
+        {
+            return (data!["main"] as NSDictionary)["humidity"] as Int
+        }
+        return 0
     }
     
     //! Get the current wind speed.
@@ -150,7 +168,12 @@ public class Weather
     */
     func getWind() -> Int
     {
-        return Int(((data["wind"] as NSDictionary)["speed"] as Float) * 3.6 )
+        if(data != nil)
+        {
+            return Int(((data!["wind"] as NSDictionary)["speed"] as Float) * 3.6 )
+        }
+        return 0
+        
     }
     
     //! Get the description of weather.
@@ -159,7 +182,11 @@ public class Weather
     */
     func getDesc() -> String
     {
-        return ((data["weather"] as NSArray)[0] as NSDictionary)["description"] as String
+        if(data != nil)
+        {
+            return ((data!["weather"] as NSArray)[0] as NSDictionary)["description"] as String
+        }
+        return "Error : cannot get weather informations, please try again"
     }
     
     //! Get the city watched.
@@ -168,7 +195,11 @@ public class Weather
     */
     func getCity() -> String
     {
-        return data["name"] as String 
+        if(data != nil)
+        {
+            return data!["name"] as String
+        }
+        return "Vladivostok"
     }
     func getAll() -> [String:String]
     {

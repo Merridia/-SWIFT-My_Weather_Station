@@ -13,7 +13,11 @@ public class Datum
     {
         let url = "www.timeapi.org/utc/now.json?%25d%20%25m%20%25Y"
         let recever = GetDatas()
-        let data : NSDictionary = recever.parseJSON(url)
-        return data["dateString"] as String
+        let data : NSDictionary? = recever.parseJSON(url)
+        if(data != nil)
+        {
+            return data!["dateString"] as String
+        }
+        return "01 - 01 - 1970"
     }
 }
