@@ -21,15 +21,15 @@ public class getCity
         var ret : [Ville]
         ret = [Ville]()
         
-        if(dat != nil)
+        if(dat != nil && dat?.objectForKey("count") != nil)
         {
             var cnt = dat!["count"] as Int
         
             for(var i=0; i<cnt; i++)
             {
             
-                var vl = Ville(m_nom: (dat!["list"] as NSArray)[0]["name"] as String, m_longitude: (((dat!["list"] as NSArray)[0]["coord"] as NSDictionary)["lon"] as Float).description, m_latitude: (((dat!["list"] as NSArray)[0]["coord"] as NSDictionary)["lat"] as Float).description)
-                vl.setCntry((((dat!["list"] as NSArray)[0] as NSDictionary)["sys"] as NSDictionary)["country"] as String)
+                var vl = Ville(m_nom: (dat!["list"] as NSArray)[i]["name"] as String, m_longitude: (((dat!["list"] as NSArray)[i]["coord"] as NSDictionary)["lon"] as Float).description, m_latitude: (((dat!["list"] as NSArray)[i]["coord"] as NSDictionary)["lat"] as Float).description)
+                vl.setCntry((((dat!["list"] as NSArray)[i] as NSDictionary)["sys"] as NSDictionary)["country"] as String)
             
                 ret.append(vl)
             }
