@@ -8,10 +8,14 @@
 import UIKit
 import MapKit
 
+//Ce code est dégueulasse
+var items = [Ville]()
 
 class piker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     let ElementCount: Int!
     
+    var selectedItem = Ville(m_nom: "Vladivostok", m_longitude: "131.89999", m_latitude: "43.13333")
+
     init(pickerInterval: Int) {
         ElementCount = pickerInterval
     }
@@ -21,16 +25,21 @@ class piker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return ElementCount
+        return items.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return String(row + 1)
+        return items[row].getName() + ", " + items[row].getCntry()
     }
     
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int)
     {
-        println("External Controller:" + String(row + 1))
+        selectedItem = items[row]
+    }
+
+    func getSel() -> Ville
+    {
+        return selectedItem
     }
 }
 
@@ -48,13 +57,11 @@ class AddTownsViewController: UIViewController{
     
     @IBOutlet weak var button_SaveThisTown: UIButton!
     
-    //https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html
     var villes: [String] = ["Paris","Bordeaux"]
     var city = Ville(m_nom: "Paris", m_longitude:"2.3488000", m_latitude:"48.8534100")
     var v = "Marseille"
     
     var listreturn = [Ville]()
-    var items = [String]()
     
     var c1 : piker!
     
@@ -62,39 +69,22 @@ class AddTownsViewController: UIViewController{
     @IBAction func button_SaveThisTown(sender: AnyObject) {
         
     }
-    //https://www.youtube.com/watch?v=MdXmIViD17U
-    
     
     //Recherche la ville dans l'api openweather
     @IBAction func actionSearch(sender: AnyObject) {
-        
-        if TF_SearchTown.text != "" {
-            listreturn = getCity.getResults(TF_SearchTown.text)
-            //listreturn.count
-            for m_city in listreturn {
-                var nomVille = m_city.getName()
-                var nomCnty = m_city.getCntry()
-                var strAffichée = nomVille + ", " + nomCnty
-                items.append(strAffichée)
-            }
+        var m = TF_SearchTown.text
+        if(TF_SearchTown.text != "")
+        {
+            items.removeAll(keepCapacity: false)
+            items = getCity.getResults(TF_SearchTown.text)
+
+            List_ListeTownFound.reloadAllComponents()
         }
     }
 
-        func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int{
-            return villes.count
-        }
-        
-        func numberOfRowsInComponent(_component: Int) -> Int{
-            return items.count
-        }
-        
-        func pickerView(_pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
-            return items[row]
-        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listreturn.append(city)
         
         c1 = piker(pickerInterval: 5)
         //List_ListeTownFound = UIPickerView()
