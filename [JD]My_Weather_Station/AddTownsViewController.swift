@@ -9,7 +9,32 @@ import UIKit
 import MapKit
 
 
-class AddTownsViewController: UIViewController, UIPickerViewDelegate {
+class piker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
+    let ElementCount: Int!
+    
+    init(pickerInterval: Int) {
+        ElementCount = pickerInterval
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ElementCount
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return String(row + 1)
+    }
+    
+    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int)
+    {
+        println("External Controller:" + String(row + 1))
+    }
+}
+
+class AddTownsViewController: UIViewController{
     
     @IBOutlet weak var labelSearchTown: UILabel!
     
@@ -30,6 +55,9 @@ class AddTownsViewController: UIViewController, UIPickerViewDelegate {
     
     var listreturn = [Ville]()
     var items = [String]()
+    
+    var c1 : piker!
+    
     
     @IBAction func button_SaveThisTown(sender: AnyObject) {
         
@@ -52,7 +80,7 @@ class AddTownsViewController: UIViewController, UIPickerViewDelegate {
         }
     }
 
-        func numberOfComponentsInPickerView(pikerView: UIPickerView!) -> Int{
+        func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int{
             return villes.count
         }
         
@@ -67,7 +95,11 @@ class AddTownsViewController: UIViewController, UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         listreturn.append(city)
-
+        
+        c1 = piker(pickerInterval: 5)
+        //List_ListeTownFound = UIPickerView()
+        List_ListeTownFound.delegate = c1
+        List_ListeTownFound.dataSource = c1
         // Do any additional setup after loading the view.
     }
 
@@ -75,9 +107,7 @@ class AddTownsViewController: UIViewController, UIPickerViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
+
 
     /*
     // MARK: - Navigation
