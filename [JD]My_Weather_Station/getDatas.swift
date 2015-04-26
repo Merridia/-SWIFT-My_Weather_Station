@@ -23,17 +23,18 @@ public class GetDatas
     {
         var data : NSData?;
         var ur = NSURL(string: "http://"+urlToRequest)
-        
+        var response : NSURLResponse?
         
         var error: NSError?
         
-        data = NSURLConnection.sendSynchronousRequest(NSURLRequest(URL: ur!), returningResponse: nil, error: &error)!
+        data = NSURLConnection.sendSynchronousRequest(NSURLRequest(URL: ur!), returningResponse: &response, error: &error)!
             //NSData(contentsOfURL: ur!, options: nil, error: &error)!
         
         var boardsDictionary: NSDictionary
-        if( error == nil)
+        var cc = (response as NSHTTPURLResponse).statusCode
+        if( error == nil && cc == 200)
         {
-            boardsDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+            boardsDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
         
             return boardsDictionary
         }
