@@ -8,14 +8,14 @@
 import UIKit
 import MapKit
 
-//Ce code est dégueulasse
 var items = [Ville]()
+var townToAdd = Ville(m_nom: "Vladivostok", m_longitude: "131.89999", m_latitude: "43.13333")
+var selectedItem = Ville(m_nom: "Vladivostok", m_longitude: "131.89999", m_latitude: "43.13333")
+
 
 class piker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     let ElementCount: Int!
     
-    var selectedItem = Ville(m_nom: "Vladivostok", m_longitude: "131.89999", m_latitude: "43.13333")
-
     init(pickerInterval: Int) {
         ElementCount = pickerInterval
     }
@@ -57,16 +57,18 @@ class AddTownsViewController: UIViewController{
     
     @IBOutlet weak var button_SaveThisTown: UIButton!
     
-    var villes: [String] = ["Paris","Bordeaux"]
-    var city = Ville(m_nom: "Paris", m_longitude:"2.3488000", m_latitude:"48.8534100")
-    var v = "Marseille"
-    
-    var listreturn = [Ville]()
     
     var c1 : piker!
     
     
     @IBAction func button_SaveThisTown(sender: AnyObject) {
+
+        townToAdd = selectedItem
+
+        if townToAdd.nom != "" {
+        listeVille.add(townToAdd)
+        println("town added")
+    }
         
     }
     

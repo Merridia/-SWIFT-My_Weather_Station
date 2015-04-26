@@ -7,6 +7,7 @@
 
 import UIKit
 
+var listeVille:VillesAjoutees = VillesAjoutees()
 class ListTownTableViewController: UITableViewController {
 
     @IBOutlet weak var ListTown: UITableViewCell!
@@ -22,16 +23,6 @@ class ListTownTableViewController: UITableViewController {
     
     var items: [String] = ["We", "Hate", "Swift"]
     
-    var listeVille:VillesAjoutees = VillesAjoutees()
-    
-    @IBAction func AddTown(sender: AnyObject) {
-        
-    }
-    
-    func ShowTown (){
-        
-
-    } 
     
     override func viewDidLoad() {
         super.viewDidLoad()
