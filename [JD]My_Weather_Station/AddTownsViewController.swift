@@ -65,7 +65,7 @@ class AddTownsViewController: UIViewController{
 
         townToAdd = selectedItem
 
-        if townToAdd.nom != "" {
+        if townToAdd.getName() != "" {
         listeVille.add(townToAdd)
         println("town added")
     }

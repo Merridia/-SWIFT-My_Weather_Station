@@ -44,6 +44,8 @@ class MainPageViewController: UIViewController {
     
     @IBOutlet weak var imageHumidityLevel: UIImageView!
     
+    @IBOutlet weak var Itembarclick: UIBarButtonItem!
+    
     func firstUpdate()
     {
         if(loc.getLon() != "")
@@ -99,7 +101,6 @@ class MainPageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-   @IBOutlet weak var Itembarclick: UIBarButtonItem!
+
 
 }
