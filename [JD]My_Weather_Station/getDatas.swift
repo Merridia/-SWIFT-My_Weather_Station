@@ -31,7 +31,7 @@ public class GetDatas
             //NSData(contentsOfURL: ur!, options: nil, error: &error)!
         
         var boardsDictionary: NSDictionary
-        if( error != nil)
+        if( error == nil)
         {
             boardsDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         

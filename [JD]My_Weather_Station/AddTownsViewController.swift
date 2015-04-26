@@ -34,7 +34,6 @@ class AddTownsViewController: UIViewController, UIPickerViewDelegate {
     @IBAction func button_SaveThisTown(sender: AnyObject) {
         
     }
-    
     //https://www.youtube.com/watch?v=MdXmIViD17U
     
     
@@ -52,9 +51,9 @@ class AddTownsViewController: UIViewController, UIPickerViewDelegate {
             }
         }
     }
-    
+
         func numberOfComponentsInPickerView(pikerView: UIPickerView!) -> Int{
-            return 1
+            return villes.count
         }
         
         func numberOfRowsInComponent(_component: Int) -> Int{
