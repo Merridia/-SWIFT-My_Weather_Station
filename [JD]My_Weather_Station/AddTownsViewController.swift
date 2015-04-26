@@ -23,43 +23,51 @@ class AddTownsViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet weak var button_SaveThisTown: UIButton!
     
+    //https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html
+    var villes: [String] = ["Paris","Bordeaux"]
+    var city = Ville(m_nom: "Paris", m_longitude:"2.3488000", m_latitude:"48.8534100")
+    var v = "Marseille"
+    
+    var listreturn = [Ville]()
+    var items = [String]()
     
     @IBAction func button_SaveThisTown(sender: AnyObject) {
         
-        var ajoutVille : VillesAjoutees
-        ajoutVille = VillesAjoutees()
     }
-        //https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html        
-        var villes: [String] = ["Paris","Bordeaux"]
-        var city = Ville(m_nom: "Paris", m_longitude:"2.3488000", m_latitude:"48.8534100")
-        var v = "Marseille"
+    
     //https://www.youtube.com/watch?v=MdXmIViD17U
-        func numberOfComponentsInPickerView(pikerView: UIPickerView!) -> Int{
-            return 1
-        }
-        
-        func numberOfRowsInComponent(_component: Int) -> Int{
-            villes.append(v)
-            return villes.count
-        }
-        
-        func pickerView(_pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
-            return villes[row]
-        }
     
     
     //Recherche la ville dans l'api openweather
     @IBAction func actionSearch(sender: AnyObject) {
         
-        //TF_SearchTown.text
-        
-        //s'il trouve plusieur ville, il rempli la liste suivante:
-        //List_ListeTownFound
+        if TF_SearchTown.text != "" {
+            listreturn = getCity.getResults(TF_SearchTown.text)
+            //listreturn.count
+            for m_city in listreturn {
+                var nomVille = m_city.getName()
+                var nomCnty = m_city.getCntry()
+                var strAffichée = nomVille + ", " + nomCnty
+                items.append(strAffichée)
+            }
+        }
     }
     
+        func numberOfComponentsInPickerView(pikerView: UIPickerView!) -> Int{
+            return 1
+        }
+        
+        func numberOfRowsInComponent(_component: Int) -> Int{
+            return items.count
+        }
+        
+        func pickerView(_pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
+            return items[row]
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        listreturn.append(city)
 
         // Do any additional setup after loading the view.
     }

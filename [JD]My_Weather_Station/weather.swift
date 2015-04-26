@@ -21,7 +21,7 @@ public class getCity
         var ret : [Ville]
         ret = [Ville]()
         
-        if(dat == nil)
+        if(dat != nil)
         {
             var cnt = dat!["count"] as Int
         
