@@ -68,8 +68,7 @@ class AddTownsViewController: UIViewController{
         if townToAdd.getName() != "" {
         listeVille.add(townToAdd)
         println("town added")
-    }
-        
+        }
     }
     
     //Recherche la ville dans l'api openweather
